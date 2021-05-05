@@ -15,6 +15,7 @@ julio betta fish backend using laravel
 
 # Import Database
 
+<<<<<<< HEAD
 ## Import database to phpmyadmin on folder importDB/julio-betta-fish.sql
 
 Pastikan nama database sama dengan nama file .sql
@@ -34,3 +35,16 @@ php artisan serve
 # API documentation
 
 https://documenter.getpostman.com/view/13334944/TzRNGWKa
+=======
+## Import database to phpmyadmin on folder `importDB/julio-betta-fish.sql`
+
+## Pastikan nama database sama dengan nama file .sql
+
+# Running Development
+
+## `php artisan serve`
+
+# API documentation
+
+## `https://documenter.getpostman.com/view/13334944/TzRNGWKa`
+>>>>>>> 55367b6c4df726bb7357ff7b3c0ba019d08c7d99
