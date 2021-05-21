@@ -2,6 +2,8 @@
 
 julio betta fish backend using laravel
 
+<img src="public/images/ui.png">
+
 # Setting Up
 
 ## Clone Repository
@@ -33,4 +35,4 @@ Pastikan nama database sama dengan nama file .sql
 
 # API documentation
 
-## https://documenter.getpostman.com/view/13334944/TzRNGWKa
+`https://documenter.getpostman.com/view/13334944/TzRNGWKa`
