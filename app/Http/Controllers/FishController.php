@@ -78,11 +78,6 @@ class FishController extends Controller
     public function edit($id)
     {
         $fish = Fish::findOrFail($id);
-        $data['slug'] = Str::slug($request->nama_ikan);
-        $data['foto'] = $request->file('foto')->store(
-            'assets/fish',
-            'public'
-        );
 
         return view('pages.fish.edit')->with([
             'fish' => $fish
