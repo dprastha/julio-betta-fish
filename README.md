@@ -35,4 +35,4 @@ Pastikan nama database sama dengan nama file .sql
 
 # API documentation
 
-`https://documenter.getpostman.com/view/13334944/TzRNGWKa`
+https://documenter.getpostman.com/view/13334944/TzRNGWKa
