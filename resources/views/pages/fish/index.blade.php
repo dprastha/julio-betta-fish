@@ -26,7 +26,7 @@
                                     <tr>
                                         <td>{{ $f->id }}</td>
                                         <td>
-                                            <img src="{{url($f->foto)}}" alt="foto {{$f->nama_ikan}}">
+                                            <img src="{{$f->foto}}" alt="foto {{$f->nama_ikan}}">
                                         </td>
                                         <td>{{ $f->nama_ikan }}</td>
                                         <td>{{ $f->harga }}</td>

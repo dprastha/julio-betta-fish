@@ -40,11 +40,9 @@
                 </div>
                 <div class="form-group">
                     <label for="foto" class="form-control-label">Foto Ikan</label>
-                    <input type="file" 
-                        name="foto"
-                        id="foto" 
+                    <input type="text" 
+                        name="foto" 
                         value="{{ old('foto') }}" 
-                        accept="image/*"
                         class="form-control @error('foto') is-invalid @enderror">
                     @error('foto') <div class="text-muted">{{ $message }}</div> @enderror
                 </div>

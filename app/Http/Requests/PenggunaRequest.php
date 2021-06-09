@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FishRequest extends FormRequest
+class PenggunaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class FishRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_ikan' => 'required|max:255',
-            'deskripsi' => 'required',
-            'harga' => 'required|integer',
-            'kuantitas' => 'required|integer',
-            'foto' => 'required'
+            'nama' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ];
     }
 }

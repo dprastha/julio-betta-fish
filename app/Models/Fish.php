@@ -14,9 +14,4 @@ class Fish extends Model
     ];
 
     protected $hidden = [];
-
-    public function getFotoAttribute($value)
-    {
-        return url('storage/' . $value);
-    }
 }

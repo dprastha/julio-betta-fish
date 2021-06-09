@@ -49,10 +49,10 @@ class FishController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->nama_ikan);
-        $data['foto'] = $request->file('foto')->store(
-            'assets/fish',
-            'public'
-        );
+        // $data['foto'] = $request->file('foto')->store(
+        //     'assets/fish',
+        //     'public'
+        // );
 
         Fish::create($data);
         return redirect()->route('fish.index');
@@ -95,10 +95,10 @@ class FishController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->nama_ikan);
-        $data['foto'] = $request->file('foto')->store(
-            'assets/fish',
-            'public'
-        );
+        // $data['foto'] = $request->file('foto')->store(
+        //     'assets/fish',
+        //     'public'
+        // );
 
         $fish = Fish::findOrFail($id);
         $fish->update($data);
