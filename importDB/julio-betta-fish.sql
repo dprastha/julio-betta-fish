@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2021 at 03:48 PM
+-- Generation Time: Jun 10, 2021 at 03:36 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -66,8 +66,9 @@ INSERT INTO `fish` (`id`, `nama_ikan`, `slug`, `deskripsi`, `harga`, `kuantitas`
 (8, 'ikan cupang pelangi', 'ikan-cupang-pelangi', 'ikan cupang berwarna warni', '10000', '100', 'assets/fish/cCKSZhpIgnYSUSw5rdcDTCqZ65ZcLzBFgPXFCLhp.jpg', '2021-06-09 04:49:00', '2021-05-10 23:46:04', '2021-06-09 04:49:00'),
 (9, 'Ikan cupang blue', 'ikan-cupang-blue', 'Ikan cupang berwarna biru', '100000', '16', 'https://cdn.idntimes.com/content-images/post/20200914/bdd0096ff8db005b2a3c3339368cb036-bd9a1fce7b62f23c3f83b60752404975.jpg', '2021-06-09 04:49:01', '2021-06-09 04:24:41', '2021-06-09 04:49:01'),
 (10, 'tes', 'tes', 'tes', '10', '10', 'https://cdn.idntimes.com/content-images/post/20200914/bdd0096ff8db005b2a3c3339368cb036-bd9a1fce7b62f23c3f83b60752404975.jpg', '2021-06-09 04:49:02', '2021-06-09 04:47:22', '2021-06-09 04:49:02'),
-(11, 'tes', 'tes', 'tes', '100', '11', 'https://cdn.idntimes.com/content-images/post/20200914/bdd0096ff8db005b2a3c3339368cb036-bd9a1fce7b62f23c3f83b60752404975.jpg', NULL, '2021-06-09 04:49:19', '2021-06-09 04:49:19'),
-(12, 'tes', 'tes', 'tes', '100', '11', 'https://cdn.idntimes.com/content-images/post/20200914/bdd0096ff8db005b2a3c3339368cb036-bd9a1fce7b62f23c3f83b60752404975.jpg', '2021-06-09 04:49:22', '2021-06-09 04:49:19', '2021-06-09 04:49:22');
+(11, 'Betta Half Moon', 'betta-half-moon', 'Ikan cupang yang memiliki bentuk seperti bulan', '10000', '11', 'https://cdn.idntimes.com/content-images/post/20200914/bdd0096ff8db005b2a3c3339368cb036-bd9a1fce7b62f23c3f83b60752404975.jpg', NULL, '2021-06-09 04:49:19', '2021-06-09 17:48:04'),
+(12, 'tes', 'tes', 'tes', '100', '11', 'https://cdn.idntimes.com/content-images/post/20200914/bdd0096ff8db005b2a3c3339368cb036-bd9a1fce7b62f23c3f83b60752404975.jpg', '2021-06-09 04:49:22', '2021-06-09 04:49:19', '2021-06-09 04:49:22'),
+(13, 'Betta Hulk', 'betta-hulk', 'Ikan Cupang berwarna hijau seperti hulk', '250000', '10', 'https://asset.kompas.com/crops/GOGE5UVQJ-kX5EkpxiXgGTRXt_E=/19x61:898x647/750x500/data/photo/2020/11/20/5fb73ab6933c4.jpg', NULL, '2021-06-09 17:50:05', '2021-06-09 17:50:05');
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2021_04_29_132035_create_transaction_details_table', 1),
 (13, '2021_06_09_131448_create_user_table', 2),
 (14, '2021_06_09_132226_create_user_table', 3),
-(15, '2021_06_09_132510_create_penggunas_table', 4);
+(15, '2021_06_09_132510_create_penggunas_table', 4),
+(16, '2021_06_10_125547_add_api_token_on_penggunas', 5),
+(17, '2021_06_10_132719_add_api_token_on_users', 6);
 
 -- --------------------------------------------------------
 
@@ -107,29 +110,6 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `penggunas`
---
-
-CREATE TABLE `penggunas` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `penggunas`
---
-
-INSERT INTO `penggunas` (`id`, `nama`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Sony', 'sony@gmail.com', '12345678', NULL, NULL),
-(2, 'Daniel', 'daniel@yahoo.com', 'akuganteng', '2021-06-09 06:45:45', '2021-06-09 06:45:45');
 
 -- --------------------------------------------------------
 
@@ -206,6 +186,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `api_token` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -215,8 +196,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin jbf', 'adminjbf@gmail.com', NULL, '$2y$10$AReEk1m7nMfHgWfejq9f0.Jl.NEeeg.6XTis6sX8EZqGqESPpX3KK', NULL, '2021-05-02 06:26:05', '2021-05-02 06:26:05');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `api_token`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin jbf', 'adminjbf@gmail.com', NULL, '$2y$10$AReEk1m7nMfHgWfejq9f0.Jl.NEeeg.6XTis6sX8EZqGqESPpX3KK', NULL, NULL, '2021-05-02 06:26:05', '2021-05-02 06:26:05'),
+(2, 'tes', 'tes@yahoo.com', NULL, '$2y$10$Gap.o7vK1BncNfaEgQo2re9EL/G3Xeh2zvTVBISTn7ZF72DiyXRJK', 't7Iopu94dKyoyiYllHajFPoq74wOrGaSsvaUkDYaGtEtYzoZNXYZwc5YBWPvVLHbBuUEMonEdmf4XbPe', NULL, '2021-06-10 06:32:51', '2021-06-10 06:32:51'),
+(3, 'yuli', 'yuli@yahoo.com', NULL, '$2y$10$FvInEkjW9pmruitSE3WBBeqnNidGxO/sYO705zILWn6CD.rhUiuoq', 'CPXnOUeTLrW6hfSZx9eB7twGLk1mqYutrEDNJZ9dL702AZYVdUkSRMz8L8CsbnCKLcUz7Th5WSZTI39b', NULL, '2021-06-10 06:34:33', '2021-06-10 06:34:33');
 
 --
 -- Indexes for dumped tables
@@ -248,12 +231,6 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `penggunas`
---
-ALTER TABLE `penggunas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -270,7 +247,8 @@ ALTER TABLE `transaction_details`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_api_token_unique` (`api_token`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -286,19 +264,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `fish`
 --
 ALTER TABLE `fish`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `penggunas`
---
-ALTER TABLE `penggunas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `transactions`
@@ -316,7 +288,7 @@ ALTER TABLE `transaction_details`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

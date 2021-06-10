@@ -4,6 +4,8 @@ julio betta fish backend using laravel
 
 <img src="public/images/ui.png">
 
+---
+
 # Setting Up
 
 ## Clone Repository
@@ -19,7 +21,7 @@ julio betta fish backend using laravel
 
 ## Import database to phpmyadmin on folder importDB/julio-betta-fish.sql
 
-Pastikan nama database sama dengan nama file .sql
+Pastikan nama database sama dengan nama file `.sql`
 
 ## NPM install
 
@@ -29,7 +31,11 @@ Pastikan nama database sama dengan nama file .sql
 
 `composer i`
 
-# Running Development
+## Database Migration
+
+`php artisan migrate`
+
+## Running Development
 
 `php artisan serve`
 

@@ -6,7 +6,8 @@ use App\Http\Controllers\API\PenggunaController;
 use App\Http\Controllers\API\FishController;
 use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\CheckoutController;
-
+use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\API\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::get('fish', [FishController::class, 'all']);
 Route::get('transactions/{id}', [TransactionController::class, 'get']);
 Route::post('checkout', [CheckoutController::class, 'checkout']);
 
-// Pengguna
-Route::get('users', [PenggunaController::class, 'get']);
-Route::post('users', [PenggunaController::class, 'post']);
+// Register
+Route::post('register', [RegisterController::class, 'action']);
+
+// Login
+Route::post('login', [LoginController::class, 'action']);
