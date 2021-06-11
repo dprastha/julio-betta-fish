@@ -24,7 +24,7 @@ class CheckoutController extends Controller
                 'id_ikan' => $fish,
             ]);
 
-            Fish::find($fish)->decrement('kuantitas');
+            // Fish::find($fish)->decrement('kuantitas');
         }
 
         $transaction->details()->saveMany($details);
