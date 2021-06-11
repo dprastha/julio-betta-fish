@@ -8,13 +8,10 @@ use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
-    public function get(Request $request, $id)
+    public function get(Request $request)
     {
-        $fish = Transaction::with(['details.fish'])->find($id);
+        $fish = Transaction::all();
 
-        if ($fish)
-            return ResponseFormatter::success($fish, 'Data transaksi berhasil diambil');
-        else
-            return ResponseFormatter::error(null, 'Data transaksi tidak ada', 404);
+        return response()->json($fish);
     }
 }
