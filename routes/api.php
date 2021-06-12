@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('fish', [FishController::class, 'all']);
-Route::get('transactions', [TransactionController::class, 'get']);
+Route::get('transactions/{id}', [TransactionController::class, 'get']);
 Route::post('checkout', [CheckoutController::class, 'checkout']);
 
 // Register
